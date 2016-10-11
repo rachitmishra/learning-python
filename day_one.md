@@ -3,34 +3,65 @@
 We don't have to declare any data types. Python does that automatically for us. So we can write
 
 ```
-a_number = 1
-a_float = 1.2
-a_boolean = True #or False
-a_string = "Hello, World!"
-a_list = [1, 2, 3]
-a_set = {1, 2, 3}
-a_dict = {"a": 1, "b": 2}
+my_number = 1
+my_float = 1.2
+my_boolean = True #or False
+my_string = "Hello, World!"
+my_list = [1, 2, 3]
+my_set = {1, 2, 3}
+my_dict = {"a": 1, "b": 2}
 ```
 ### Interesting methods
 
 ```
->>>type(a_number) #Prints type of any variable
+>>>type(my_number) #Prints type of any variable
 >>>int
 ```
 
 ```
->>>isinstance(a_number, int) #Check if variable is of type
+>>>isinstance(my_number, int) #Check if variable is of type
 >>>True
 ```
 
 ```
->>>type(a_number) #Prints attributes of a variable
+>>>type(my_number) #Prints attributes of a variable
 >>>['__abs__',
  '__add__',
  '__and__',
  '__bool__',
  '__ceil__',
 
+```
+
+## String operations
+
+
+```
+my_string = "Hello!"
+>>>len(my_string) #Returns length of string
+>>>6
+```
+
+```
+>>>my_string.count(l) #Returns count of particular string/character in a string
+>>>2
+>>>my_string.count(ll)
+>>>1
+```
+
+```
+>>>my_string.index(l) #Returns position of particular string/character in a string
+>>>2
+```
+
+```
+>>>my_string.split(" ") #Split a string at any delimiter
+>>>2
+```
+
+```
+>>>my_string.split(index1:index2) #Returns a sub-string from index1, to index2
+>>>2
 ```
 
 ## Operators
@@ -43,32 +74,6 @@ a_dict = {"a": 1, "b": 2}
 /  (Float division), #Returns float division
 // (Integer Division), #Return integer division(except if numerator or denominator is float)
 %  (Modulus)
-```
-
-## String operations
-
-
-```
-a_string = "Hello!"
->>>len(a_string) #Returns length of string
->>>6
-```
-
-```
->>>a_string.count(l) #Returns count of particular string/character in a string
->>>2
->>>a_string.count(ll)
->>>1
-```
-
-```
->>>a_string.index(l) #Returns position of particular string/character in a string
->>>2
-```
-
-```
->>>a_string.split(" ") #Split a string at any delimiter
->>>2
 ```
 
 ## Control statements
