@@ -7,12 +7,25 @@ my_number = 1
 my_float = 1.2
 my_boolean = True #or False
 my_string = "Hello, World!"
-my_list = [1, 2, 3]
-my_set = {1, 2, 3}
-my_dict = {"a": 1, "b": 2}
-None
+None #Yes it is a datatype with value null
 ```
-### Interesting methods
+
+Lists
+```
+my_list = [1, 2, 3]
+```
+
+Set
+```
+my_set = {1, 2, 3}
+```
+
+Dictionaries
+```
+my_dict = {"a": 1, "b": 2}
+```
+
+### Important methods
 
 ```
 >>>type(my_number) #Prints type of any variable
@@ -63,16 +76,4 @@ my_string = "Hello!"
 ```
 >>>my_string.split(index1:index2) #Returns a sub-string from index1, to index2
 >>>2
-```
-
-## Operators
-
-```
-+  (Plus),
--  (Minus),
-*  (Multiply),
-** (Power of),
-/  (Float division), #Returns float division
-// (Integer Division), #Return integer division(except if numerator or denominator is float)
-%  (Modulus)
 ```
