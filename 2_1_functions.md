@@ -22,8 +22,20 @@ print(sum)
 
 >>> 3
 ```
+Methods can have default argument values
 
-We can also functions as *arguments*
+```
+def my_function(a, b = 2):
+    return a + b #Returning a value from function
+
+sum = my_function(1) #Oh! We just one argument, the method will use the default value now
+
+print(sum)
+
+>>> 3
+```
+
+We can also pass functions as *arguments*
 
 ```
 def my_function(a, b):
@@ -34,6 +46,46 @@ def my_function_with_function_args(a, b, my_function_arg):
 
 print(my_function_with_function_args(1, 2, my_function)) # Remember not to pass function as my_function(), that will instead call the function
 ```
+
+We can define function inside functions as well as return functions
+
+```
+def my_function():
+
+    def my_inner_function():
+        print("I am in my_function")
+
+    return my_inner_function
+
+print(my_function()())
+```
+
+```
+def my_function():
+    def my_inner_function():
+        print("I am in my_function")
+    my_inner_function()
+
+my_function()
+
+```
+
+Using global keyword we can set global variable to be used in future
+
+
+```
+def my_function():
+    def my_inner_function():
+        global n
+        n = 1
+        print("I am in my_function")
+    my_inner_function()
+
+my_function()
+print(n)
+
+```
+Although this is not allowed and we should use lists and dicts to return multiple values
 
 ## `fargs, *args, **kargs`
 
@@ -110,7 +162,36 @@ Decoraters allow us wrapping our method result inside other method calls
 
 
 ```
-def my_decorator_function(function_to_be_decorated)
+def my_decorator_function(function_to_be_decorated):
+    def my_function():
+        print("Starting decor")
+        function_to_be_decorated(1, 2)
+        print("Ending decor")
+    return my_function
+
+def sum(a, b):
+    print(a+b)
+
+decor = my_decorator_function(sum)
+
+decor()
+```
+
+This can also be written as
+
+```
+def my_decorator_function(function_to_be_decorated):
+    def my_function():
+        print("Starting decor")
+        function_to_be_decorated(1, 2)
+        print("Ending decor")
+    return my_function
+
+@my_decorator_function #Remember this has to be defined
+def sum(a, b):
+    print(a+b)
+
+sum()
 ```
 
 ## Important other methods

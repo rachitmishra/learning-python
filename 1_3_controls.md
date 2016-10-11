@@ -40,3 +40,14 @@ for n in l:
     print(n)
 >>>1 2 3 4
 ```
+
+#### for-else
+
+The else part executes only if the loop completed fine, i.e without any `break`
+```
+my_array  = [1, 2, 3]
+for k in my_array:
+    print(k)
+else:
+    print("oh! else!")
+```
