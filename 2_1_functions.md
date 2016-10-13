@@ -123,9 +123,9 @@ Lambda methods are one line based methods used for operations limited to one lin
 They are define as `lambda x: x**2`
 
 ```
-  my_array = [1, 2, 3]
-  square_array = lambda x: x**2
-  print(square_array)
+  my_list = [1, 2, 3]
+  square_list = lambda x: x**2
+  print(square_list)
 ```
 
 ## Modules and `import`
@@ -194,33 +194,71 @@ def sum(a, b):
 sum()
 ```
 
+## Function caching
+
+We can cache the result values of function if we doing some repetative operation or heaving IO operations
+
+We can use the `@lru_cache` decorater to cache the return of our function. This way next time we will get the cached result.
+
+```
+@lru_cache(maxsize=2) # Available in Python3.2+, maxsize tells how many return values to cache
+def my_function():
+    for i in range(10):
+        return (i)
+```
+
 ## Important other methods
 
 `map()` It is used to map the values of a list to a new result.
 
 ```
-    my_array = [1, 2, 3]
-    list(map(lambda x: x+1, my_array))
+    my_list = [1, 2, 3]
+    list(map(lambda x: x+1, my_list))
 ```
 
 `filter()` It is used to filter list elements based on a condition
 
 ```
-    my_array = [1, 2, 3]
-    list(filter(lambda x: x/2, my_array))
+    my_list = [1, 2, 3]
+    list(filter(lambda x: x/2, my_list))
 ```
 
 `reduce()` It is used to get a single operation result from all elements ex. sum of list
 
 ```
     from functools import reduce
-    my_array = [1, 2, 3]
-    reduce(lambda x, y: x/2, my_array)
+    my_list = [1, 2, 3]
+    reduce(lambda x, y: x/2, my_list)
 ```
 
 `next()` Return next value in the iterators(generators, or any object which has next method)
 
 ```
-    my_array = [1, 2, 3]
-    print(my_array.next())
+def my_function():
+    for i in range(5):
+        yield i
+print(my_function.next())
+```
+
+`enumerate()` Allows us to loop over any iterator giving an automatic counter
+
+```
+    my_list = [1, 2, 3]
+    for counter, value in enumerate(my_list) :
+        print(counter, value)
+
+    >>>0 1
+    >>>1 2
+    >>>2 3
+```
+
+We can also pass an optional argument to `enumerate` to tell it from which value it should start counter(default is 0)
+
+```
+    my_list = [1, 2, 3]
+    for counter, value in enumerate(my_list, 1) :
+        print(counter, value)
+
+    >>>0 1
+    >>>1 2
 ```
