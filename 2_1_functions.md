@@ -3,7 +3,7 @@
 Function are the basic building blocks of code which do a specific operation on a set of arguments.
 They can be defined
 
-```
+```python
 def my_function(a, b):
     print(a + b)
 ```
@@ -12,7 +12,7 @@ Then call it simply as
 
 `my_function(1,2)`
 
-```
+```python
 def my_function(a, b):
     return a + b #Returning a value from function
 
@@ -24,7 +24,7 @@ print(sum)
 ```
 Methods can have default argument values
 
-```
+```python
 def my_function(a, b = 2):
     return a + b #Returning a value from function
 
@@ -37,7 +37,7 @@ print(sum)
 
 We can also pass functions as *arguments*
 
-```
+```python
 def my_function(a, b):
     return a+b
 
@@ -49,7 +49,7 @@ print(my_function_with_function_args(1, 2, my_function)) # Remember not to pass 
 
 We can define function inside functions as well as return functions
 
-```
+```python
 def my_function():
 
     def my_inner_function():
@@ -60,7 +60,7 @@ def my_function():
 print(my_function()())
 ```
 
-```
+```python
 def my_function():
     def my_inner_function():
         print("I am in my_function")
@@ -73,7 +73,7 @@ my_function()
 Using global keyword we can set global variable to be used in future
 
 
-```
+```python
 def my_function():
     def my_inner_function():
         global n
@@ -95,7 +95,7 @@ Interesting part is `*args`
 
 If we aren't not sure about of number of arguments to a method we can define our method as
 
-```
+```python
 def my_function(*args):
     for a in args:
         print(a)
@@ -107,7 +107,7 @@ my_function(1, 2, 3, 4)
 
 `**kargs` or key-value arguments can also be defined as
 
-```
+```python
 def my_function(**args):
     for a, b in args.item(): #a is the key and b is the value
         print(a, b)
@@ -122,7 +122,7 @@ Lambda methods are one line based methods used for operations limited to one lin
 
 They are define as `lambda x: x**2`
 
-```
+```python
   my_list = [1, 2, 3]
   square_list = lambda x: x**2
   print(square_list)
@@ -132,7 +132,7 @@ They are define as `lambda x: x**2`
 
 You may create a set of methods in your `utils.py`, in easy words we may call it our Utils module
 
-```
+```python
 from utils import my_function #import a single method from utils
 
 #or
@@ -207,7 +207,7 @@ def my_function():
         return (i)
 ```
 
-## Important other methods
+## Inbuilt functions
 
 `map()` It is used to map the values of a list to a new result.
 
