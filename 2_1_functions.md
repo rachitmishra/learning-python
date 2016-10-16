@@ -1,7 +1,7 @@
 ## Functions
 
-Function are the basic building blocks of code which do a specific operation on a set of arguments.
-They can be defined
+# Function are the basic building blocks of code which do a specific operation on a set of arguments.
+# They can be defined asM
 
 ```python
 def my_function(a, b):
